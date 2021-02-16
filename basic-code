@@ -1,0 +1,87 @@
+//include($_SERVER['DOCUMENT_ROOT'] . "/e/admin/config/configure.php");
+
+class Dbh{
+    public  function connect(){
+    $conn = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABSE);
+    mysqli_set_charset($conn, 'utf8'); 
+    return $conn;
+    }
+}
+
+class insert extends Dbh{
+    public function save($sql){
+        $result=$this->connect()->query($sql);
+        if ($result === TRUE) {
+            $data='1';
+        }
+        else{
+            $data='0';
+        }
+        return $data;
+        $this->connect()->close();
+    }
+    
+}
+//end insert item 
+
+// View Item 
+class view extends Dbh{
+    public function getData($sql){
+        $result=$this->connect()->query($sql);
+        $numRow=$result->num_rows;  
+        $data=  array();
+        if($numRow){
+            while($row=$result->fetch_assoc()){
+                $data[]=$row;
+            }
+            return $data;
+        }
+        $this->connect()->close();
+    }
+}
+//End  View Item
+
+// Upadte Item
+class update extends Dbh{
+    public function updateData($sql){
+        $result=$this->connect()->query($sql);
+        if ($result === TRUE) {
+            $data='1';
+        }
+        else{
+            $data='0';
+        }
+        return $data;
+        $this->connect()->close();
+    }
+}
+//End  Update Item
+
+// Upadte Item
+class delete extends Dbh{
+    public function deleteData($sql){
+        $result=$this->connect()->query($sql);
+        if ($result === TRUE) {
+            $data='1';
+        }
+        else{
+            $data='0';
+        }
+        return $data;
+        $this->connect()->close();
+    }
+}
+//School Info
+class schoolInfo extends dbh{
+    public function getData(){
+        $sql="SELECT * FROM ".PREFIX."school_info";
+        $result=$this->connect()->query($sql);
+        $numRow=$result->num_rows; 
+        $data=  array();
+        if($numRow > 0) {
+            $data=$result->fetch_assoc();
+            return $data;
+        }
+        $this->connect()->close();
+    }
+}
