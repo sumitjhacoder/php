@@ -1,0 +1,2 @@
+$txt =json_encode($_REQUEST);
+$myfile = file_put_contents('logs.txt', $txt.PHP_EOL , FILE_APPEND | LOCK_EX);
