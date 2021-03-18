@@ -5,3 +5,6 @@ E:\xampp\htdocs>composer global require laravel/installer
 E:\xampp\htdocs>composer create-project --prefer-dist laravel/laravel example
 E:\xampp\htdocs>composer install
 E:\xampp\htdocs\example>php artisan serve
+
+//file
+E:\xampp\htdocs\example\storage\framework\views
