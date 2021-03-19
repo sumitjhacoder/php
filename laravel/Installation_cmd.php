@@ -6,5 +6,5 @@ E:\xampp\htdocs>composer create-project --prefer-dist laravel/laravel example
 E:\xampp\htdocs>composer install
 E:\xampp\htdocs\example>php artisan serve
 
-//file
-E:\xampp\htdocs\example\storage\framework\views
+//file create loaction
+C:\xampp\htdocs\blog\resources\views
