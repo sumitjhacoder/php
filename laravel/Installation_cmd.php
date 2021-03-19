@@ -8,3 +8,5 @@ E:\xampp\htdocs\example>php artisan serve
 
 //file create loaction
 C:\xampp\htdocs\blog\resources\views
+//page call function
+C:\xampp\htdocs\blog\app\Models
