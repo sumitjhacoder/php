@@ -1,3 +1,4 @@
+<?php 
 $conn= new mysqli("localhost", "abc", "root", "");
 $all_query_ok=true; // our control variable
 
@@ -11,3 +12,4 @@ $conn->query("INSERT INTO fact_test2 (n,f) VALUES ('ss4','xx4')") ? null : $all_
 
 //now let's test our control variable
 $all_query_ok ? $conn->commit() : $conn->rollback();
+?>
